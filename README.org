@@ -1,0 +1,13 @@
+* Licensing Quibbles
+Before I get into anything else, I'd like to say that I'm releasing
+the TeX sources to everything but the /pure content/ of the
+translations as Creative Commons BY-SA.  Each bible contains a
+LICENSE.tex file that details the license for that particular
+translation/version.  For example, the KJV TeX sources are /public
+domain/, but its class file (that which actually /formats/ the
+content) is in fact CC-BY-SA.  Thus, you are free to do whatever you
+will with the content of the KJV, but its layout is under Creative
+Commons.
+
+Similarly, all other (future) versions will have a separate license
+for their content as opposed to their layout.
