@@ -40,7 +40,7 @@
 \DeclareDocumentCommand{\chapter}{o}{
   \refstepcounter{chapter}
   \vspace{2ex plus .2ex minus .2ex}
-  \lettrine[lines=4]{\arabic{chapter}}{}
+  \lettrine[lines=3]{\arabic{chapter}}{}
   \IfValueTF{#1}
     {\centerline{\bfseries#1}\newline}{}
   \setcounter{verse}{0}
@@ -50,10 +50,10 @@
 %\setcounter{verse}{0}
 \DeclareDocumentCommand{\verse}{}{
   \refstepcounter{verse}
-  \textsuperscript{\arabic{verse}}
+  \textsuperscript{\color{black}\arabic{verse}}
 }
 
-\DeclareDocumentCommand{\LordSays}{m}{
+\DeclareDocumentCommand{\Father}{m}{
   \textcolor{red}{#1}
 }
 \ExplSyntaxOff
