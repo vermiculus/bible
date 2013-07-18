@@ -12,16 +12,11 @@
 
 \RequirePackage{xspace}
 \RequirePackage{xcolor}
-%\RequirePackage{microtype}
-%\microtypesetup{enable}
-%\microtypesetup{expansion=true}
-%\microtypesetup{protrusion=true}
-%\microtypesetup{kerning=true}
-%\microtypesetup{tracking=true}
+%\RequirePackage{microtype}\microtypesetup{protrusion=true}
 \RequirePackage{xparse}
-\RequirePackage{hyperref}
+\RequirePackage{type1cm}
+\RequirePackage{lettrine}
 
-%\usepackage[asymmetric,top=2cm,bottom=4cm,inner=5cm,outer=1.5cm]{geometry}
 \usepackage[top=2cm,bottom=4cm,inner=2.5cm,outer=1cm]{geometry}
 
 \newcommand{\LORD}{\textsc{Lord}\xspace}
@@ -42,16 +37,12 @@
   \setcounter{chapter}{0}
 }
 
-%\newcounter{chapter}[book]
-%\setcounter{chapter}{0}
 \DeclareDocumentCommand{\chapter}{o}{
   \refstepcounter{chapter}
   \vspace{2ex plus .2ex minus .2ex}
-  {{\Large \arabic{chapter}}
-    \IfNoValueTF{#1}
-      {}
-      {\quad{\bfseries #1}}
-  }
+  \lettrine[lines=4]{\arabic{chapter}}{}
+  \IfValueTF{#1}
+    {\centerline{\bfseries#1}\newline}{}
   \setcounter{verse}{0}
 }
 
@@ -74,6 +65,6 @@
 % Local Variables:
 % mode: latex
 % TeX-master: "bible.tex"
-% TeX-engine: xetex
+% TeX-engine: default
 % TeX-PDF-mode: t
 % End:
