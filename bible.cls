@@ -113,8 +113,8 @@
 \newcommand{\inputbook}[1]{
   \begingroup
     \cs_if_exist:NTF{\inputbook@only}
-      {\IfStrEq{#1}{\inputbook@only}{\input{\bibleversion/#1}\newpage}}
-      {\input{\bibleversion/#1}\newpage}
+      {\IfStrEq{#1}{\inputbook@only}{\input{\bibleversion/#1}\clearpage}}
+      {\input{\bibleversion/#1}\clearpage}
   \endgroup
 }
 
