@@ -11,6 +11,8 @@
 
 \renewcommand{\thefootnote}{\alph{footnote}}
 
+\def\usecs#1{\csname#1\endcsname}
+
 \setlength{\parindent}{1em}
 
 \SetVersion{kjv}
@@ -18,12 +20,14 @@
 \NewSpeaker{\Father}{blue}{blue!50!black}
 \NewSpeaker{\Son}{red}{red!50!black}
 
+\input{hyphenations}
+
 \input{notes}
 
 \null\vfil
 \centerline{The Bible\TeX\ Project}
 \vfil
-%\testbook{old/genesis}
+\testbook{old/genesis}
 
 \newpage
 
@@ -33,10 +37,10 @@
 \vfil
 
 
-\csname note genesis 1:1\endcsname
-\csname note genesis 1:2\endcsname
-\csname note genesis 3:16\endcsname
-\csname note exodus 1:1\endcsname
+\usecs{note genesis 1:1}
+\usecs{note genesis 1:2}
+\usecs{note genesis 3:16}
+\usecs{note exodus 1:1}
 
 %\Huge
 
