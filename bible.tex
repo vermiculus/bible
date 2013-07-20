@@ -1,26 +1,25 @@
-\documentclass[twoside]{bible}
-\usepackage{metalogo}
-%\usepackage[pageanchor=false]{hyperref}
-
+\documentclass[
+  twoside,
+  draft
+  ]{bible}
+\usepackage{metalogo} % For Xe(La)TeX Logos
 
 \def\today{March 2, 2011}
 \title{The King James Bible}
 
-
 \renewcommand{\thefootnote}{\alph{footnote}}
 
-\makeatletter
-
-\makeatother
-
 \SetVersion{kjv}
-%\includeonly{\bibleversion/old/genesis}
-
 \begin{document}
+\NewSpeaker{\Father}{blue}{blue!50!black}
+\NewSpeaker{\Son}{red}{red!50!black}
+
 \input{notes}
 
-The Bible\TeX\ Project
-%\testbook{old/genesis}
+\null\vfil
+\centerline{The Bible\TeX\ Project}
+\vfil
+\testbook{old/genesis}
 
 \newpage
 

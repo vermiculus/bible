@@ -11,18 +11,18 @@
 \LoadClass{memoir}
 
 \RequirePackage{xspace}
-\RequirePackage{xcolor}
-%\RequirePackage{microtype}\microtypesetup{protrusion=true}
 \RequirePackage{xparse}
 \RequirePackage{type1cm}
 \RequirePackage{lettrine}
-\RequirePackage{csquotes}
 
 \usepackage[top=2cm,bottom=3cm,inner=2.5cm,outer=1cm]{geometry}
 
-\newcommand{\LORD}{\textsc{Lord}\xspace}
-
 \ExplSyntaxOn
+\RequirePackage{xspace}
+\NewDocumentCommand{\LORD}{}{
+  \textsc{Lord}\xspace
+}
+
 %\newcounter{book}
 \setcounter{book}{0}
 \DeclareDocumentCommand{\book}{omo}{
@@ -48,29 +48,45 @@
   \bool_set_true:c{is_first_verse}
 }
 
-%\newcounter{verse}[chapter]
-%\setcounter{verse}{0}
 \DeclareDocumentCommand{\verse}{}{
   \refstepcounter{verse}
-  % \ifnum\value{verse} > 1
   \bool_if:cTF{is_first_verse}
     {\bool_set_false:c{is_first_verse}}
-    {\textsuperscript{\color{black}\arabic{verse}}
-      % \fi
-      % 
-      % \cs_if_exist_use:c{note \@currbook \arabic{chapter}:\arabic{verse}}
+    {\textsuperscript{\color{black}\arabic{verse}}}
+  }
+
+\RequirePackage{csquotes,xcolor}
+\DeclareDocumentCommand{\NewSpeaker}{mommo}{
+  % #1 csname
+  % #2 arbitrary insert code before
+  % #3 text color direct
+  % #4 text color indirect
+  % #5 arbitrary insert code after
+  \NewDocumentCommand{#1}{sm}{
+    \IfBooleanTF{##1}
+      {
+        \textcolor{black}{
+          \enquote*{\textcolor {#4} {##2}}
+        }
+      }
+      {
+        \textcolor{black}{
+          \enquote{\textcolor {#3} {##2}}
+        }
+      }
     }
   }
 
-\DeclareDocumentCommand{\Father}{m}{
-  \enquote{\textcolor{blue}{#1}}
-}
+
+
 \usepackage{xstring}
 \newcommand{\testbook}[1]{\def\inputbook@only{#1}}
-\newcommand{\inputbook}[1]{%
-  \cs_if_exist:NTF{\inputbook@only}%
-    {\IfStrEq{#1}{\inputbook@only}{\input{\bibleversion/#1}\newpage}}
-    {\input{\bibleversion/#1}\newpage}%
+\newcommand{\inputbook}[1]{
+  \begingroup
+    \cs_if_exist:NTF{\inputbook@only}
+      {\IfStrEq{#1}{\inputbook@only}{\input{\bibleversion/#1}\newpage}}
+      {\input{\bibleversion/#1}\newpage}
+  \endgroup
 }
 
 \ExplSyntaxOff
