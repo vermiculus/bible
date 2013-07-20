@@ -7,3 +7,4 @@
 *.aux
 *.xdv
 test/*
+!bible.pdf
