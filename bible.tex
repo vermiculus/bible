@@ -1,75 +1,80 @@
-\documentclass[twoside,twocolumn]{bible}
-\usepackage[english]{babel}
+\documentclass[twoside]{bible}
 \usepackage{metalogo}
-\usepackage{textcomp}
-\usepackage{hyperref}
-\makeatletter
-\@ifundefined{c@Hy@AnnotLevel}{\newcounter{Hy@AnnotLevel}}{}
-\makeatother
-
-\newcommand{\SetVersion}[1]{\def\bibleversion{#1}}
-\newcommand{\insertbook}[1]{\include{\bibleversion/#1}}
-
-
-\SetVersion{kjv}
-\includeonly{\bibleversion/old/genesis}
+%\usepackage[pageanchor=false]{hyperref}
 
 
 \def\today{March 2, 2011}
-
 \title{The King James Bible}
 
-\begin{document}
-\null
-\thispagestyle{empty}
-\vfil
-\centerline{\Large The Old Testament of the King~James~Version of the Bible}
-\vfil
-\null
 
+\renewcommand{\thefootnote}{\alph{footnote}}
+
+\makeatletter
+
+\makeatother
+
+\SetVersion{kjv}
+%\includeonly{\bibleversion/old/genesis}
+
+\begin{document}
 \input{notes}
 
-\csname note genesis 1:1\endcsname
+The Bible\TeX\ Project
+%\testbook{old/genesis}
 
+\newpage
+
+\thispagestyle{empty}
+\null\vfil
+\centerline{\Large The Old Testament of the King~James~Version of the Bible}
+\vfil
+
+
+\csname note genesis 1:1\endcsname
+\csname note genesis 3:16\endcsname
 \csname note exodus 1:1\endcsname
 
-\include{\bibleversion/old/genesis}
-\include{\bibleversion/old/exodus}
-\include{\bibleversion/old/leviticus}
-\include{\bibleversion/old/numbers}
-\include{\bibleversion/old/dueteronomy}
-\include{\bibleversion/old/joshua}
-\include{\bibleversion/old/judges}
-\include{\bibleversion/old/ruth}
-\include{\bibleversion/old/samuel1}
-\include{\bibleversion/old/samuel2}
-\include{\bibleversion/old/kings1}
-\include{\bibleversion/old/kings2}
-\include{\bibleversion/old/chronicles1}
-\include{\bibleversion/old/chronicles2}
-\include{\bibleversion/old/ezra}
-\include{\bibleversion/old/nehemiah}
-\include{\bibleversion/old/esther}
-\include{\bibleversion/old/job}
-\include{\bibleversion/old/psalms}
-\include{\bibleversion/old/proverbs}
-\include{\bibleversion/old/ecclesiastes}
-\include{\bibleversion/old/songofsolomon}
-\include{\bibleversion/old/isaiah}
-\include{\bibleversion/old/jeremiah}
-\include{\bibleversion/old/lamentations}
-\include{\bibleversion/old/ezekiel}
-\include{\bibleversion/old/daniel}
-\include{\bibleversion/old/hosea}
-\include{\bibleversion/old/joel}
-\include{\bibleversion/old/amos}
-\include{\bibleversion/old/obadiah}
-\include{\bibleversion/old/jonah}
-\include{\bibleversion/old/micah}
-\include{\bibleversion/old/nahum}
-\include{\bibleversion/old/habakkuk}
-\include{\bibleversion/old/zechariah}
-\include{\bibleversion/old/malachi}
+%\Huge
+
+\twocolumn
+
+\inputbook{old/genesis}
+\inputbook{old/exodus}
+\inputbook{old/leviticus}
+\inputbook{old/numbers}
+\inputbook{old/dueteronomy}
+\inputbook{old/joshua}
+\inputbook{old/judges}
+\inputbook{old/ruth}
+\inputbook{old/samuel1}
+\inputbook{old/samuel2}
+\inputbook{old/kings1}
+\inputbook{old/kings2}
+\inputbook{old/chronicles1}
+\inputbook{old/chronicles2}
+\inputbook{old/ezra}
+\inputbook{old/nehemiah}
+\inputbook{old/esther}
+\inputbook{old/job}
+\inputbook{old/psalms}
+\inputbook{old/proverbs}
+\inputbook{old/ecclesiastes}
+\inputbook{old/songofsolomon}
+\inputbook{old/isaiah}
+\inputbook{old/jeremiah}
+\inputbook{old/lamentations}
+\inputbook{old/ezekiel}
+\inputbook{old/daniel}
+\inputbook{old/hosea}
+\inputbook{old/joel}
+\inputbook{old/amos}
+\inputbook{old/obadiah}
+\inputbook{old/jonah}
+\inputbook{old/micah}
+\inputbook{old/nahum}
+\inputbook{old/habakkuk}
+\inputbook{old/zechariah}
+\inputbook{old/malachi}
 
 \null
 \thispagestyle{empty}
@@ -78,37 +83,41 @@
 \vfil
 \null
 
-\include{\bibleversion/new/matthew}
-\include{\bibleversion/new/mark}
-\include{\bibleversion/new/luke}
-\include{\bibleversion/new/john}
-\include{\bibleversion/new/acts}
-\include{\bibleversion/new/romans}
-\include{\bibleversion/new/corinthians1}
-\include{\bibleversion/new/corinthians2}
-\include{\bibleversion/new/glatations}
-\include{\bibleversion/new/ephesians}
-\include{\bibleversion/new/philippians}
-\include{\bibleversion/new/colossians}
-\include{\bibleversion/new/thessalonians1}
-\include{\bibleversion/new/thessalonians2}
-\include{\bibleversion/new/timothy1}
-\include{\bibleversion/new/timothy2}
-\include{\bibleversion/new/titus}
-\include{\bibleversion/new/philemon}
-\include{\bibleversion/new/hebrews}
-\include{\bibleversion/new/james}
-\include{\bibleversion/new/peter1}
-\include{\bibleversion/new/peter2}
-\include{\bibleversion/new/john1}
-\include{\bibleversion/new/john2}
-\include{\bibleversion/new/john3}
-\include{\bibleversion/new/jude}
-\include{\bibleversion/new/revelations}
-\backmatter
+\inputbook{new/matthew}
+\inputbook{new/mark}
+\inputbook{new/luke}
+\inputbook{new/john}
+\inputbook{new/acts}
+\inputbook{new/romans}
+\inputbook{new/corinthians1}
+\inputbook{new/corinthians2}
+\inputbook{new/galatians}
+\inputbook{new/ephesians}
+\inputbook{new/philippians}
+\inputbook{new/colossians}
+\inputbook{new/thessalonians1}
+\inputbook{new/thessalonians2}
+\inputbook{new/timothy1}
+\inputbook{new/timothy2}
+\inputbook{new/titus}
+\inputbook{new/philemon}
+\inputbook{new/hebrews}
+\inputbook{new/james}
+\inputbook{new/peter1}
+\inputbook{new/peter2}
+\inputbook{new/john1}
+\inputbook{new/john2}
+\inputbook{new/john3}
+\inputbook{new/jude}
+\inputbook{new/revelations}
+\backmatter\onecolumn
+% Need to make single column
+\include{\bibleversion/license-page}
 
-This King~James~Bible was enhanced from the version provided by
-Project~Gutenburg in 2010.  Typeset with \XeTeX\ in 8.81 seconds.
+% colophon
+
+This Bible was typeset by \XeTeX\ (with the extensions of \XeLaTeX) in 8.81 seconds.
+\XeLaTeX\ is based upon the original \TeX\ typesetting system by Dr.~Donald~E.~Knuth and extensions (\LaTeX) written for it by Leslie~Lamport.
 \end{document}
 
 %%% Local Variables: 
