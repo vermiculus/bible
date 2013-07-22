@@ -110,12 +110,16 @@
 
 \RequirePackage{xstring}
 \newcommand{\testbook}[1]{\def\inputbook@only{#1}}
+\newif\iftypeset
+\typesettrue
 \newcommand{\inputbook}[1]{
+  \iftypeset
   \begingroup
     \cs_if_exist:NTF{\inputbook@only}
       {\IfStrEq{#1}{\inputbook@only}{\input{\bibleversion/#1}\clearpage}}
       {\input{\bibleversion/#1}\clearpage}
   \endgroup
+  \fi
 }
 
 \ExplSyntaxOff

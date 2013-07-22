@@ -2,6 +2,9 @@
   twoside,
 %  draft,
   ]{bible}
+
+\typesettrue
+
 \usepackage{metalogo} % For Xe(La)TeX Logos
 
 \usepackage{microtype}
@@ -124,15 +127,21 @@
 
 % colophon
 
-This Bible was typeset by \XeTeX\ (with the extensions of \XeLaTeX) in
-19.459 seconds.  \XeLaTeX\ is based upon the original \TeX\
+\newgeometry{centering,width=4in}
+
+\thispagestyle{empty}
+\null\vfil\noindent
+This King~James~Bible was typeset by \XeTeX\ (using the \XeLaTeX\ format) in
+6.64~seconds on a single thread of an Intel~i7~3770K running at
+$3.50\,\mathrm{GHz}$.  \XeLaTeX\ is based upon the original \TeX\
 typesetting system by Dr.~Donald~E.~Knuth and its extensions (\LaTeX)
 written by Leslie~Lamport.
+\vfil\vfil
 \end{document}
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
-%%% TeX-engine: default 
+%%% TeX-engine: default
 %%% TeX-PDF-mode: t
-%%% End: 
+%%% End:
