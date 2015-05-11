@@ -14,6 +14,10 @@
 \RequirePackage{geometry}
 \geometry{top=2cm,bottom=3cm,inner=2.5cm,outer=1cm}
 
+\let\footruleskip\relax
+\RequirePackage{fancyhdr}
+\fancyhead[LE,RO]{\@ifundefined{@currbook}{}{\@currbook}}
+
 \ExplSyntaxOn
 \RequirePackage{xspace}
 \NewDocumentCommand{\LORD}{}{
@@ -22,9 +26,11 @@
 
 %\newcounter{book}
 \setcounter{book}{0}
-\DeclareDocumentCommand{\book}{omo}{
-  % #1 Subtitle
-  % #2 Title
+\bool_new:c{is_first_verse}
+\bool_new:c{is_first_chap}
+\DeclareDocumentCommand{\book}{om}{
+  % #1 keys
+  % #2 title
   % #3 key (default #2)
 
   % Step the book counter
@@ -45,10 +51,10 @@
 
   % Reset the chapter counter
   \setcounter{chapter}{0}
+  \bool_set_true:c{is_first_chap}
 }
 
 \RequirePackage{lettrine}
-\bool_new:c{is_first_verse}
 \DeclareDocumentCommand{\chapter}{o}{
   % #1 Title
 
@@ -59,7 +65,9 @@
   \vspace{2ex plus .2ex minus .2ex}
 
   % Fancy chapter numbers
-  \lettrine[findent=0.5em,nindent=0pt]{\arabic{chapter}}{}
+  \bool_if:cTF{is_first_chap}
+    {\bool_set_false:c{is_first_chap}}
+    {\lettrine[findent=0.5em,nindent=0pt]{\arabic{chapter}}{}}
 
   % If we have a chapter title, typeset it centered on the first line
   \IfValueTF{#1}
@@ -81,6 +89,7 @@
   \bool_if:cTF{is_first_verse}
     {\bool_set_false:c{is_first_verse}}
     {\textsuperscript{\color{black}\arabic{verse}}}
+    \noindent
   }
 
 \RequirePackage{csquotes,xcolor}

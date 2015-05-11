@@ -32,12 +32,14 @@
 \vfil
 %\testbook{old/genesis}
 
-\newpage
+\clearpage
 
+\onecolumn
 \thispagestyle{empty}
 \null\vfil
 \centerline{\Large The Old Testament of the King~James~Version of the Bible}
 \vfil
+\twocolumn
 
 
 %\usecs{note genesis 1:1}
@@ -47,7 +49,6 @@
 
 %\Huge
 
-\twocolumn
 
 \inputbook{old/genesis}
 \inputbook{old/exodus}
@@ -87,12 +88,12 @@
 \inputbook{old/zechariah}
 \inputbook{old/malachi}
 
-\null
+\onecolumn
 \thispagestyle{empty}
-\vfil
+\null\vfil
 \centerline{\Large The New Testament of the King~James~Version of the Bible}
 \vfil
-\null
+\twocolumn
 
 \inputbook{new/matthew}
 \inputbook{new/mark}
@@ -132,7 +133,7 @@
 \thispagestyle{empty}
 \null\vfil\noindent
 This King~James~Bible was typeset by \XeTeX\ (using the \XeLaTeX\ format) in
-6.64~seconds on a single thread of an Intel~i7~3770K running at
+6.64~seconds on a single thread of an Intel~\mbox{i7-3770K} running at
 $3.50\,\mathrm{GHz}$.  \XeLaTeX\ is based upon the original \TeX\
 typesetting system by Dr.~Donald~E.~Knuth and its extensions (\LaTeX)
 written by Leslie~Lamport.
@@ -143,5 +144,4 @@ written by Leslie~Lamport.
 %%% mode: latex
 %%% TeX-master: t
 %%% TeX-engine: default
-%%% TeX-PDF-mode: t
 %%% End:
