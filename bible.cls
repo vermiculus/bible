@@ -28,6 +28,7 @@
 
 \int_new:N \g_bible_book_index_int
 \int_new:N \g_bible_chap_index_int
+\int_new:N \g_bible_verse_index_int
 
 \cs_new:Nn \bible_tl_default_to:NN {
   \tl_if_empty:NT #1 { \tl_set_eq:NN #1 #2 }
@@ -77,15 +78,15 @@
 \DeclareDocumentCommand \Chapter {o}{
   \int_gincr:N \g_bible_chap_index_int
   \tl_gclear:N \g_bible_chap_name_tl
-  \IfValueT{#1}{ \keys_set:nn { bible / chap } {#1} }
+  \IfValueT{#1}{ \keys_set:nn { bible / chapter } {#1} }
 
   \bigskip
 
-  \int_compare:nF { \g_bible_chap_index = 1 } {
+  \int_compare:nF { \g_bible_chap_index_int = 1 } {
     \lettrine[findent=0.5em,nindent=0pt]
     {
       \tl_set:No \l_tmpa_tl { \int_to_arabic:n { \int_use:N \g_bible_chap_index_int } }
-      {\Large \l_tmpa_tl}
+      {\Huge \l_tmpa_tl}
       \pdfbookmark[1]{ Chapter~\l_tmpa_tl }{\g_bible_book_toc_name_tl / \l_tmpa_tl }
     }{}\relax
   }
@@ -143,7 +144,7 @@
 \NewDocumentCommand \InputBook { mm } {
   \Book{#1}
   \bool_if:nT {
-    ! \tl_if_empty_p:N \g_bible_input_only_book_tl ||
+    \tl_if_empty_p:N \g_bible_input_only_book_tl ||
     \tl_if_eq_p:NN \g_bible_input_only_book_tl \l_tmpa_tl
   } {
     \input{\g_bible_version_tl / #2}
@@ -155,4 +156,5 @@
 % TeX-master: "bible.tex"
 % TeX-engine: default
 % TeX-PDF-mode: t
+% TeX-engine: xetex
 % End:

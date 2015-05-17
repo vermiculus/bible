@@ -39,6 +39,7 @@
 \vfil
 \twocolumn
 
+%\InputOnlyBook{old/genesis}
 
 %\usecs{note genesis 1:1}
 %\usecs{note genesis 1:2}
@@ -108,7 +109,10 @@
 \InputBook{toc-name = Colossians,        name = The Epistle of Paul the Apostle to the Colossians}{new/colossians}
 \InputBook{toc-name = Thessalonians I,   name = The First Epistle of Paul the Apostle to the Thessalonians}{new/thessalonians1}
 \InputBook{toc-name = Thessalonians II,  name = The Second Epistle of Paul the Apostle to the Thessalonians}{new/thessalonians2}
-\InputBook{toc-name = Timothy I,         name = The First Epistle of Paul the Apostle to Timothy}{new/timothy1}\InputBook{toc-name = Timothy II} name = The Second Epistle of Paul the Apostle to Timothy,{new/timothy2}\InputBook{toc-name = Titus} name = The Epistle of Paul the Apostle to Titus,{new/titus}\InputBook{toc-name = Philemon, name = The Epistle of Paul the Apostle to Philemon}{new/philemon}
+\InputBook{toc-name = Timothy I,         name = The First Epistle of Paul the Apostle to Timothy}{new/timothy1}
+\InputBook{toc-name = Timothy II,        name = The Second Epistle of Paul the Apostle to Timothy}{new/timothy2}
+\InputBook{toc-name = Titus,             name = The Epistle of Paul the Apostle to Titus}{new/titus}
+\InputBook{toc-name = Philemon,          name = The Epistle of Paul the Apostle to Philemon}{new/philemon}
 \InputBook{toc-name = Hebrews,           name = The Epistle of Paul the Apostle to the Hebrews}{new/hebrews}
 \InputBook{toc-name = James,             name = The General Epistle of James}{new/james}
 \InputBook{toc-name = Peter,             name = The First Epistle General of Peter I}{new/peter1}
@@ -121,6 +125,10 @@
 
 \backmatter\onecolumn
 % Need to make single column
+\ExplSyntaxOn
+\tl_new:N \bibleversion
+\tl_set_eq:NN \bibleversion \g_bible_version_tl
+\ExplSyntaxOff
 \include{\bibleversion/license-page}
 
 % colophon
