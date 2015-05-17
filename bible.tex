@@ -3,8 +3,6 @@
 %  draft,
   ]{bible}
 
-\typesettrue
-
 \usepackage{metalogo} % For Xe(La)TeX Logos
 
 \usepackage{microtype}
@@ -18,7 +16,7 @@
 
 \setlength{\parindent}{1em}
 
-\SetVersion{kjv}
+\BibleVersion{kjv}
 \begin{document}
 \NewSpeaker{\Father}{blue}{blue!50!black}
 \NewSpeaker{\Son}{red}{red!50!black}
@@ -50,43 +48,44 @@
 %\Huge
 
 
-\inputbook{old/genesis}
-\inputbook{old/exodus}
-\inputbook{old/leviticus}
-\inputbook{old/numbers}
-\inputbook{old/dueteronomy}
-\inputbook{old/joshua}
-\inputbook{old/judges}
-\inputbook{old/ruth}
-\inputbook{old/samuel1}
-\inputbook{old/samuel2}
-\inputbook{old/kings1}
-\inputbook{old/kings2}
-\inputbook{old/chronicles1}
-\inputbook{old/chronicles2}
-\inputbook{old/ezra}
-\inputbook{old/nehemiah}
-\inputbook{old/esther}
-\inputbook{old/job}
-\inputbook{old/psalms}
-\inputbook{old/proverbs}
-\inputbook{old/ecclesiastes}
-\inputbook{old/songofsolomon}
-\inputbook{old/isaiah}
-\inputbook{old/jeremiah}
-\inputbook{old/lamentations}
-\inputbook{old/ezekiel}
-\inputbook{old/daniel}
-\inputbook{old/hosea}
-\inputbook{old/joel}
-\inputbook{old/amos}
-\inputbook{old/obadiah}
-\inputbook{old/jonah}
-\inputbook{old/micah}
-\inputbook{old/nahum}
-\inputbook{old/habakkuk}
-\inputbook{old/zechariah}
-\inputbook{old/malachi}
+\InputBook{name = The First Book of Moses, toc-name = Genesis}{old/genesis}
+\InputBook{name = The Second Book of Moses, toc-name = Exodus}{old/exodus}
+\InputBook{name = The Third Book of Moses, toc-name = Leviticus}{old/leviticus}
+\InputBook{name = The Fourth Book of Moses, toc-name = Numbers}{old/numbers}
+\InputBook{name = The Fifth Book of Moses, toc-name = Deuteronomy}{old/dueteronomy}
+\InputBook{name = Joshua}{old/joshua}
+\InputBook{name = Judges}{old/judges}
+\InputBook{name = Ruth}{old/ruth}
+\InputBook{name = The First Book of Samuel, toc-name = Samuel I}{old/samuel1} % KINGS I
+\InputBook{name = The Second Book of Samuel, toc-name = Samuel II}{old/samuel2} % KINGS II
+\InputBook{name = The First Book of the Kings, toc-name = Kings I}{old/kings1} % KINGS III
+\InputBook{name = The Second Book of the Kings, toc-name = Kings II}{old/kings2} % KINGS IV
+\InputBook{name = The First Book of the Chronicles, toc-name = Chronicles I}{old/chronicles1}
+\InputBook{name = The Second Book of the Chronicles, toc-name = Chronicles II}{old/chronicles2}
+\InputBook{name = Ezra}{old/ezra}
+\InputBook{name = Nehemiah}{old/nehemiah}
+\InputBook{name = Esther}{old/esther}
+\InputBook{name = Job}{old/job}
+\InputBook{name = Psalms}{old/psalms}
+\InputBook{name = Proverbs}{old/proverbs}
+\InputBook{name = The Preacher, toc-name = Ecclesiastes}{old/ecclesiastes}
+\InputBook{name = The Song of Solomon}{old/songofsolomon}
+\InputBook{name = The Book of the Prophet Isaiah, toc-name = Isaiah}{old/isaiah}
+\InputBook{name = The Book of the Prophet Jeremiah, toc-name = Jeremiah}{old/jeremiah}
+\InputBook{name = The Lamentations of Jeremiah, toc-name = Jeremiah}{old/lamentations}
+\InputBook{name = The Book of the Prophet Ezekiel, toc-name = Exekiel}{old/ezekiel}
+\InputBook{name = Daniel}{old/daniel}
+\InputBook{name = Hosea}{old/hosea}
+\InputBook{name = Joel}{old/joel}
+\InputBook{name = Amos}{old/amos}
+\InputBook{name = Obadiah}{old/obadiah}
+\InputBook{name = Jonah}{old/jonah}
+\InputBook{name = Micah}{old/micah}
+\InputBook{name = Nahum}{old/nahum}
+\InputBook{name = Habakkuk}{old/habakkuk}
+\InputBook{name = Zechariah}{old/zechariah}
+\InputBook{name = Malachi}{old/malachi}
+
 
 \onecolumn
 \thispagestyle{empty}
@@ -95,33 +94,31 @@
 \vfil
 \twocolumn
 
-\inputbook{new/matthew}
-\inputbook{new/mark}
-\inputbook{new/luke}
-\inputbook{new/john}
-\inputbook{new/acts}
-\inputbook{new/romans}
-\inputbook{new/corinthians1}
-\inputbook{new/corinthians2}
-\inputbook{new/galatians}
-\inputbook{new/ephesians}
-\inputbook{new/philippians}
-\inputbook{new/colossians}
-\inputbook{new/thessalonians1}
-\inputbook{new/thessalonians2}
-\inputbook{new/timothy1}
-\inputbook{new/timothy2}
-\inputbook{new/titus}
-\inputbook{new/philemon}
-\inputbook{new/hebrews}
-\inputbook{new/james}
-\inputbook{new/peter1}
-\inputbook{new/peter2}
-\inputbook{new/john1}
-\inputbook{new/john2}
-\inputbook{new/john3}
-\inputbook{new/jude}
-\inputbook{new/revelations}
+\InputBook{toc-name = Matthew,           name = The Gospel According to Saint Matthew}{new/matthew}
+\InputBook{toc-name = Mark,              name = The Gospel According to Saint Mark}{new/mark}
+\InputBook{toc-name = Luke,              name = The Gospel According to Saint Luke}{new/luke}
+\InputBook{toc-name = John,              name = The Gospel According to Saint John}{new/john}
+\InputBook{toc-name = Acts,              name = The Acts of the Apostles}{new/acts}
+\InputBook{toc-name = Romans,            name = The Epistle of Paul the Apostle to the Romans}{new/romans}
+\InputBook{toc-name = I Corinthians,     name = The First Epistle of Paul the Apostle to the Corinthians}{new/corinthians1}
+\InputBook{toc-name = II Corinthians,    name = The Second Epistle of Paul the Apostle to the Corinthians}{new/corinthians2}
+\InputBook{toc-name = Galatians,         name = The Epistle of Paul the Apostle to the Galatians}{new/galatians}
+\InputBook{toc-name = Ephesians,         name = The Epistle of Paul the Apostle to the Ephesians}{new/ephesians}
+\InputBook{toc-name = Philippians,       name = The Epistle of Paul the Apostle to the Philippians}{new/philippians}
+\InputBook{toc-name = Colossians,        name = The Epistle of Paul the Apostle to the Colossians}{new/colossians}
+\InputBook{toc-name = Thessalonians I,   name = The First Epistle of Paul the Apostle to the Thessalonians}{new/thessalonians1}
+\InputBook{toc-name = Thessalonians II,  name = The Second Epistle of Paul the Apostle to the Thessalonians}{new/thessalonians2}
+\InputBook{toc-name = Timothy I,         name = The First Epistle of Paul the Apostle to Timothy}{new/timothy1}\InputBook{toc-name = Timothy II} name = The Second Epistle of Paul the Apostle to Timothy,{new/timothy2}\InputBook{toc-name = Titus} name = The Epistle of Paul the Apostle to Titus,{new/titus}\InputBook{toc-name = Philemon, name = The Epistle of Paul the Apostle to Philemon}{new/philemon}
+\InputBook{toc-name = Hebrews,           name = The Epistle of Paul the Apostle to the Hebrews}{new/hebrews}
+\InputBook{toc-name = James,             name = The General Epistle of James}{new/james}
+\InputBook{toc-name = Peter,             name = The First Epistle General of Peter I}{new/peter1}
+\InputBook{toc-name = Peter,             name = The Second General Epistle of Peter II}{new/peter2}
+\InputBook{toc-name = I John,            name = The First Epistle General of John I}{new/john1}
+\InputBook{toc-name = John,              name = The Second Epistle General of John II}{new/john2}
+\InputBook{toc-name = John,              name = The Third Epistle General of John III}{new/john3}
+\InputBook{toc-name = Jude,              name = The General Epistle of Jude}{new/jude}
+\InputBook{toc-name = Revelations,       name = The Revelation of Saint~John~the~Devine}{new/revelations}
+
 \backmatter\onecolumn
 % Need to make single column
 \include{\bibleversion/license-page}
