@@ -28,7 +28,7 @@
 \setcounter{book}{0}
 \bool_new:c{is_first_verse}
 \bool_new:c{is_first_chap}
-\DeclareDocumentCommand{\book}{om}{
+\DeclareDocumentCommand{\book}{omo}{
   % #1 keys
   % #2 title
   % #3 key (default #2)
